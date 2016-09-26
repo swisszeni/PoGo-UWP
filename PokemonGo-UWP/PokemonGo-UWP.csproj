@@ -835,6 +835,7 @@
     <Compile Include="ViewModels\ItemsInventoryPageViewModel.cs" />
     <Compile Include="ViewModels\PokemonDetailPageViewModel.cs" />
     <Compile Include="ViewModels\PokemonInventoryPageViewModel.cs" />
+    <Compile Include="ViewModels\PokemonSelectionPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\SearchPokeStopPageViewModel.cs" />
@@ -882,6 +883,9 @@
     </Compile>
     <Compile Include="Views\Pokemon\PokemonInventoryPage.xaml.cs">
       <DependentUpon>PokemonInventoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pokemon\PokemonSelectionPage.xaml.cs">
+      <DependentUpon>PokemonSelectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pokemon\SortingMenuOverlayControl.xaml.cs">
       <DependentUpon>SortingMenuOverlayControl.xaml</DependentUpon>
@@ -1026,6 +1030,10 @@
     <Page Include="Views\Pokemon\PokemonInventoryPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pokemon\PokemonSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pokemon\SortingMenuOverlayControl.xaml">
       <SubType>Designer</SubType>

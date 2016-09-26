@@ -652,7 +652,7 @@ namespace PokemonGo_UWP.Utils
                             currentPokemon.PokemonId, hatchedEggResponse.StardustAwarded[i], hatchedEggResponse.CandyAwarded[i],
                             hatchedEggResponse.ExperienceAwarded[i])).ShowAsyncQueue();
 
-                    BootStrapper.Current.NavigationService.Navigate(typeof(PokemonDetailPage), new SelectedPokemonNavModel()
+                    BootStrapper.Current.NavigationService.Navigate(typeof(PokemonDetailPage), new PokemonDetailPageNavModel()
                     {
                         SelectedPokemonId = currentPokemon.PokemonId.ToString(),
                         ViewMode = PokemonDetailPageViewMode.ReceivedPokemon

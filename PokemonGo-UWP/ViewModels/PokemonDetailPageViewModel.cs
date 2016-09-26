@@ -41,7 +41,7 @@ namespace PokemonGo_UWP.ViewModels
             } else
             {
                 // Navigating from inventory page so we need to load the pokemoninventory and the current pokemon
-                var navParam =  (SelectedPokemonNavModel)parameter;
+                var navParam =  (PokemonDetailPageNavModel)parameter;
                 Load(Convert.ToUInt64(navParam.SelectedPokemonId), navParam.SortingMode, navParam.ViewMode);
             }
 
@@ -555,7 +555,7 @@ namespace PokemonGo_UWP.ViewModels
 
         public DelegateCommand NavigateToEvolvedPokemonCommand => _navigateToEvolvedPokemonCommand ?? (_navigateToEvolvedPokemonCommand = new DelegateCommand(() =>
         {
-            NavigationService.Navigate(typeof(PokemonDetailPage), new SelectedPokemonNavModel()
+            NavigationService.Navigate(typeof(PokemonDetailPage), new PokemonDetailPageNavModel()
             {
                 SelectedPokemonId = EvolvedPokemon.Id.ToString(),
                 ViewMode = PokemonDetailPageViewMode.ReceivedPokemon

@@ -307,7 +307,7 @@ namespace PokemonGo_UWP.ViewModels
                                                                  .FirstOrDefault(item => item.Id == _capturedPokemonId);
                                                              if (currentPokemon != null)
                                                              {
-                                                                 NavigationService.Navigate(typeof(PokemonDetailPage), new SelectedPokemonNavModel()
+                                                                 NavigationService.Navigate(typeof(PokemonDetailPage), new PokemonDetailPageNavModel()
                                                                  {
                                                                      SelectedPokemonId = _capturedPokemonId.ToString(),
                                                                      ViewMode = PokemonDetailPageViewMode.ReceivedPokemon

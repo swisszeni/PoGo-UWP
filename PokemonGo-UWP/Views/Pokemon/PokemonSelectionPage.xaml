@@ -1,0 +1,55 @@
+﻿<Page x:Class="PokemonGo_UWP.Views.PokemonSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:PokemonGo_UWP.Views"
+      xmlns:viewModels="using:PokemonGo_UWP.ViewModels"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pogo="using:PokemonGo_UWP.Controls"
+      mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewModels:PokemonSelectionPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Grid Background="{StaticResource PageBackgroundGradient}">
+        <Border Margin="8,0"
+                Background="{StaticResource LightPageBackgroundGradient}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <pogo:PoGoPivotHeader x:Uid="PokemonHeader"
+                                      Grid.Row="0"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Bottom"
+                                      Margin="0,0,0,5"
+                                      Title="POKÉMON"
+                                      Foreground="{StaticResource TitleTextColor}"
+                                      DataCurrent="{Binding TotalPokemonCount}"
+                                      DataMaximum="{Binding PlayerProfile.MaxPokemonStorage}" />
+                <Rectangle Grid.Row="0"
+                           Height="2"
+                           Margin="40,0"
+                           RadiusX="2"
+                           RadiusY="2"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Fill="{StaticResource TitleTextColor}" />
+                <local:PokemonInventoryControl Grid.Row="1"
+                                               x:Name="PokemonInventory"
+                                               PokemonInventory="{Binding PokemonInventory}"
+                                               PokemonSelectedCommand="{Binding GotoPokemonDetailCommand}"
+                                               SortingMode="{Binding CurrentPokemonSortingMode, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+        <!--Close Button-->
+        <Button Command="{Binding ReturnToGameScreen}"
+                Style="{StaticResource ButtonCircle}"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,21">
+            <Image Source="ms-appx:///Assets/Buttons/btn_close.png" />
+        </Button>
+    </Grid>
+</Page>

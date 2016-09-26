@@ -224,7 +224,7 @@ namespace PokemonGo_UWP.ViewModels
         private DelegateCommand<PokemonDataWrapper> _gotoPokemonDetailCommand;
         public DelegateCommand<PokemonDataWrapper> GotoPokemonDetailCommand => _gotoPokemonDetailCommand ?? (_gotoPokemonDetailCommand = new DelegateCommand<PokemonDataWrapper>((selectedPokemon) => 
         {
-            NavigationService.Navigate(typeof(PokemonDetailPage), new SelectedPokemonNavModel()
+            NavigationService.Navigate(typeof(PokemonDetailPage), new PokemonDetailPageNavModel()
             {
                 SelectedPokemonId = selectedPokemon.Id.ToString(),
                 SortingMode = CurrentPokemonSortingMode,
